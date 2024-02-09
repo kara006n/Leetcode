@@ -25,22 +25,19 @@ class Solution {
     // return prev;
     // }
 
-    private ListNode reverse(ListNode prev, ListNode head) {
-
-        ListNode start = null;
-        if (head == null) {
-            start = prev;
-        } else {
-            start = reverse(head, head.next);
-            head.next = prev;
-        }
-        return start;
-    }
-
     public ListNode reverseList(ListNode head) {
-
-        return reverse(null, head);
+        
+        if(head == null || head.next == null) {
+        	return head;
+        }
+        ListNode reversed = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return reversed;
 
     }
+
+    
+    
 
 }
