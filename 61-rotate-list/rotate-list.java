@@ -22,6 +22,11 @@ class Solution {
 			temp = temp.next;
 		}
 		
+        //handle best case
+        if(count == k){
+            return head;
+        }
+
 		temp.next = head;
 		ListNode temp2 = temp;
 
