@@ -25,7 +25,9 @@ class Solution {
 		temp.next = head;
 		ListNode temp2 = temp;
 
-        k = k%count;
+        k = k%count;//initially i havent done this but when i realized that when k is smaller 
+        //than length of list then it is working fine but in case where k is larger than 
+        //count then error comes as count-k becomes negative.
 
 		
 		for(int i = count-k; i>0; i--) {
