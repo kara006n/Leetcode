@@ -19,19 +19,11 @@ class Solution {
         char charAt = input.charAt(n);
 
         if (Character.isLetter(charAt)) {
-
-            String output2 = output;
-            output = output + Character.toLowerCase(charAt);
-            output2 = output2 + Character.toUpperCase(charAt);
-            n++;
-            recursion(input, output, n, list);
-            recursion(input, output2, n, list);
-            return;
+            recursion(input, output+ Character.toLowerCase(charAt), n+1, list);
+            recursion(input, output+ Character.toUpperCase(charAt), n+1, list);
 
         } else {
-            output = output + charAt;
-            recursion(input, output, ++n, list);
-            return;
+            recursion(input, output+ charAt, n+1, list);
         }
     }
 }
