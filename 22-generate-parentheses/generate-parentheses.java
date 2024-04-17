@@ -17,21 +17,17 @@ class Solution {
 		
 		if(open == 0 && close ==0) {
 			list.add(output);
-			System.out.println("print done");
 			return;
 		}
 		
-		if(open == close) {
+		
+		if(open>0) {
 			recursion(open-1, close, output+"(", list);
-			return;
 		}
-		if(open ==0) {
+		
+		if(open<close) {
 			recursion(open, close-1, output+")", list);
-			return;
 		}
-		recursion(open-1, close, output+"(", list);
-		recursion(open, close-1, output+")", list);
-		return;
 				
 	}
 }
